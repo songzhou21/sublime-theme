@@ -4,10 +4,7 @@
   "variables":
   {
     "black": "black",
-    "black2": "hsl(30, 100%, 13%)",
-    "black3": "hsl(240, 100%, 10%)",
-    "black4": "hsl(200, 100%, 10%)",
-    "blue": "hsl(216, 100%, 33%)",
+    "blue": "hsl(203, 83.5%, 34.3%)",
     "blue2": "hsl(224, 100%, 50%)",
     "blue3": "hsl(240, 100%, 23%)",
     "blue4": "hsl(204, 100%, 83%)",
@@ -24,7 +21,7 @@
     "light_gray": "#f6f6f6",
     "orange": "hsl(24, 61%, 74%)",
     "dark_orange": "hsla(10, 90%, 60%, 1)",
-    "pink": "hsl(317, 100%, 23%)",
+    "pink": "hsl(304, 62.6%, 37.5%)",
     "purple": "hsl(255, 29%, 47%)",
     "red": "hsl(0, 100%, 30%)",
     "red2": "hsl(0, 100%, 50%)",
@@ -35,10 +32,12 @@
     "yellow": "hsl(60, 100%, 50%)",
     "yellow2": "hsl(53, 89%, 79%)",
     "yellow3": "hsl(52, 100%, 63%)",
+
     "brown": "hsla(30, 30%, 45%, 1)",
     "dark_brown": "hsla(30, 30%, 30%, 1)",
 
     "accent": "var(blue2)",
+    "attributes": "hsl(44, 96.1%, 26%)"
   },
   "globals":
   {
@@ -84,41 +83,70 @@
   [
     {
       "scope": "comment",
-      "foreground": "color(black alpha(0.47))"
+      "foreground": "hsl(209, 13%, 42.5%)"
+    },
+    // =======
+    // Strings
+    // =======
+    {
+      "scope": "string, string.unquoted",
+      "foreground": "var(cyan2)"
     },
     {
-      "scope": "comment.documentation, meta.documentation.tag",
-      "foreground": "var(grey)"
+      "scope": "string.regexp",
+      "foreground": "var(red4)"
+    },
+    //==========
+    // Constant
+    //==========
+    {
+      "scope": "constant",
+      "foreground": "color(var(pink))"
+    },
+    // e.g., "nil"
+    {
+      "scope": "constant.language",
+      "foreground": "color(var(pink))"
+    },
+    // e.g., "1"
+    {
+      "scope": "constant.numeric",
+      "foreground": "hsl(248, 100%, 40.5%)"
+    },
+    // e.g. "\n"
+    {
+      "scope": "constant.character.escape",
+      "foreground": "var(cyan2)"
+    },
+    //==========
+    // Entity
+    //==========
+    {
+      "scope": "entity.name",
+      "foreground": "var(blue)"
+    },
+    // markdown, title" in "# title"
+    {
+      "scope": "entity.name.section",
+      "foreground": "var(blue)",
     },
     {
-      "scope": "keyword.other.documentation, punctuation.definition.keyword",
-      "foreground": "var(grey)"
+      "scope": "entity.name.function",
+      "font_style": "bold"
+    },
+    // "html" in "<html>"
+    {
+      "scope": "entity.name.tag",
+      "foreground": "var(blue)"
     },
     {
-      "scope": "constant, string constant",
-      "foreground": "var(pink)"
-    },
-    {
-      // e.g. ":" in `{foo: bar}`
-      "scope": "constant.other.object.key",
-      "foreground": "var(grey2)"
-    },
-    {
-      // e.g. "->" and "." in `foo->bar.baz`
-      "scope": "punctuation.accessor",
-      "foreground": "color(var(black3) alpha(0.47))"
-    },
-    {
-      // e.g. "(" and ")" in `foo((baz)bar)`
-      // e.g. "[" and "]" in `foo[bar]`
-      // e.g. "{" and "}" in `if { ... }`
-      "scope": "punctuation.section.group, punctuation.section.brackets, meta.brace, punctuation.section.block, punctuation.terminator",
-      "foreground": "color(var(black3) alpha(0.47))"
+      "scope": "entity.other.inherited-class",
+      "foreground": "var(blue)",
+      "font_style": "bold"
     },
     {
       // e.g. "Foo" in `typedef struct x Foo` (C)
-      // e.g. "Config" in `new Config()` (TS)
-      "scope": "entity.name.type, source.ts support.type",
+      "scope": "entity.name.type",
       "foreground": "var(blue)"
     },
     {
@@ -127,61 +155,86 @@
       "font_style": "bold"
     },
     {
-      "scope": "keyword, storage",
-      "foreground": "color(black alpha(0.6))"
+      "scope": "entity.other.attribute-name",
+      "foreground": "var(grey)"
     },
+    //==========
+    // Variable
+    //==========
     {
-      "scope": "storage.type, support.type",
-      "foreground": "color(var(black4) alpha(0.8))"
+      "scope": "variable",
+      "foreground": "color(var(black))"
+    },
+    // e.g., "self, super"
+    {
+      "scope": "variable.language",
+      "foreground": "color(var(pink))"
+    },
+    // e.g., "other" in "- (BOOL)isEqual:(id)other {}"
+    {
+      "scope": "variable.parameter",
+      "foreground": "color(black)"
+    },
+    // invoked methods
+    // "NSLog()"
+    {
+      "scope": "variable.function",
+      "foreground": "hsl(186, 39.9%, 32.2%)"
+    },
+    // ========
+    // Keyword
+    // ========
+    {
+      "scope": "keyword",
+      "foreground": "color(var(pink))"
     },
     {
       // e.g. "if"
       "scope": "keyword.control",
-      "foreground": "color(var(blue3) alpha(0.67))"
+      "foreground": "color(var(pink))"
+    },
+    {
+      // e.g. "+, -, ="
+      "scope": "keyword.operator",
+      "foreground": "color(black)"
     },
     {
       // e.g. "#define"
-      "scope": "meta.preprocessor keyword.control",
-      "foreground": "color(var(black2) alpha(0.73))"
+      "scope": "meta.preprocessor | meta.preprocessor keyword.control",
+      "foreground": "hsl(22, 51.5%, 25.7%)"
     },
+
+    // =======
+    // Storage
+    // =======
+    // e.g, int, bool, char
     {
-      "scope": "entity.other.inherited-class",
-      "foreground": "var(grey2)",
-      "font_style": "bold"
+      "scope": "storage.type",
+      "foreground": "color(var(pink))"
     },
+    // e.g., static, inline, const, public, private
     {
-      "scope": "entity.name.function",
-      "font_style": "bold"
+      "scope": "storage.modifier",
+      "foreground": "color(var(pink))"
     },
+    // =======
+    // Support
+    // =======
+    // Other Class
+    // e.g., "NSArray"
     {
-      "scope": "meta.function-call entity.name.function, entity.invocation entity.name.function",
-      "font_style": "normal"
+      "scope": "support.class, support.type",
+      "foreground": "hsl(261, 100%, 31.5%)"
     },
+    // Other functions/constant
+    // e.g., "isKindOfClass"
     {
-      "scope": "string, string.unquoted, constant.character.escape",
-      "foreground": "var(cyan2)"
+      "scope": "support.constant, support.function",
+      "foreground": "hsl(268, 51.5%, 43.6%)"
     },
-    {
-      "scope": "string variable, string constant",
-      "foreground": "var(cyanDark)"
-    },
-    {
-      "scope": "string.regexp",
-      "foreground": "var(red4)"
-    },
-    {
-      "scope": "declaration.tag, declaration.tag entity, meta.tag, meta.tag entity",
-      "foreground": "var(purple)"
-    },
-    {
-      "scope": "entity.other.attribute-name",
-      "foreground": "var(grey)"
-    },
-    {
-      "scope": "meta.tag string, declaration.tag string",
-      "foreground": "var(green2)"
-    },
-    // misc
+    // =======
+    // Invalid
+    // =======
     {
       "scope": "invalid.deprecated",
       "foreground": "var(red)",
@@ -192,7 +245,9 @@
       "foreground": "var(white)",
       "background": "var(red3)"
     },
+    // ========
     // Markdown
+    // ========
     {
       "scope": "markup.heading.1 entity.name.section",
       "foreground": "var(blue)",
@@ -214,8 +269,7 @@
     },
     {
       "scope": "markup.underline",
-      "foreground": "var(black)",
-      "font_style": "underline"
+      "foreground": "hsl(240, 100%, 53%)",
     },
     {
       "scope": "markup.italic markup.bold | markup.bold markup.italic",
@@ -240,7 +294,12 @@
     // "-, *" in list
     {
       "scope": "markup.list punctuation.definition.list_item",
-      "foreground": "var(brown)"
+      "foreground": "var(attributes)"
+    },
+    // "[X]" in "[X] list-item"
+    {
+      "scope": "markup.list.unnumbered.markdown constant.language.checkbox.markdown-gfm",
+      "foreground": "var(black)"
     },
     {
       "scope": "meta.table.header - punctuation",
