@@ -3,6 +3,7 @@
   "author": "rsms",
   "variables":
   {
+    "black": "black",
     "black2": "hsl(30, 100%, 13%)",
     "black3": "hsl(240, 100%, 10%)",
     "black4": "hsl(200, 100%, 10%)",
@@ -32,6 +33,8 @@
     "yellow3": "hsl(52, 100%, 63%)",
 
     "accent": "var(blue2)",
+
+    "dark_orange": "hsla(10, 90%, 60%, 1)",
   },
   "globals":
   {
@@ -167,25 +170,6 @@
       "scope": "meta.tag string, declaration.tag string",
       "foreground": "var(green2)"
     },
-
-    // machine code assembly
-    {
-      "scope": "storage.register",
-      "foreground": "var(yellow2)"
-    },
-    {
-      "scope": "storage.register.ip",
-      "foreground": "var(cyan)"
-    },
-    {
-      "scope": "storage.register.x64",
-      "foreground": "var(green)"
-    },
-    {
-      "scope": "entity.directive",
-      "foreground": "var(orange)"
-    },
-
     // misc
     {
       "scope": "invalid.deprecated",
@@ -196,6 +180,63 @@
       "scope": "invalid.illegal",
       "foreground": "var(white)",
       "background": "var(red3)"
+    },
+    // Markdown
+    {
+      "scope": "markup.heading.1 entity.name.section",
+      "foreground": "var(blue)",
+      "font_style": "bold"
+    },
+    {
+      "scope": "markup.heading.2 entity.name.section",
+      "foreground": "var(blue)"
+    },
+    {
+      "scope": "markup.italic",
+      "foreground": "var(black)",
+      "font_style": "italic"
+    },
+    {
+      "scope": "markup.bold",
+      "foreground": "var(black)",
+      "font_style": "bold"
+    },
+    {
+      "scope": "markup.underline",
+      "foreground": "var(black)",
+      "font_style": "underline"
+    },
+    {
+      "scope": "markup.italic markup.bold | markup.bold markup.italic",
+      "foreground": "var(black)",
+      "font_style": "bold italic"
+    },
+    {
+      "scope": "markup.underline markup.bold | markup.bold markup.underline",
+      "foreground": "var(black)",
+      "font_style": "bold underline"
+    },
+    {
+      "scope": "markup.underline markup.italic | markup.italic markup.underline",
+      "foreground": "var(black)",
+      "font_style": "italic underline"
+    },
+    {
+      "scope": "markup.bold markup.italic markup.underline | markup.bold markup.underline markup.italic | markup.italic markup.bold markup.underline | markup.italic markup.underline markup.bold | markup.underline markup.bold markup.italic | markup.underline markup.italic markup.bold",
+      "foreground": "var(black)",
+      "font_style": "bold italic underline"
+    },
+    {
+      "scope": "markup.list punctuation.definition.list_item",
+      "foreground": "var(dark_orange)"
+    },
+    {
+      "scope": "markup.raw",
+      "background": "var(light_gray)"
+    },
+    {
+      "scope": "meta.table.header - punctuation",
+      "font_style": "bold"
     }
   ]
 }
