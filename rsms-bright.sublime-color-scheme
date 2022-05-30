@@ -291,9 +291,9 @@
       "foreground": "var(black)",
       "font_style": "bold italic underline"
     },
-    // "-, *" in list
+    // "-, *, 1" in list
     {
-      "scope": "markup.list punctuation.definition.list_item",
+      "scope": "markup.list punctuation.definition.list_item, markup.list.numbered.bullet.markdown",
       "foreground": "var(attributes)"
     },
     // "[X]" in "[X] list-item"
