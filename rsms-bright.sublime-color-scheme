@@ -318,6 +318,11 @@
     {
       "scope": "markup.raw.inline.markdown",
       "background": "var(light_gray)"
+    },
+    // code fence
+    {
+      "scope": "markup.raw.code-fence",
+      "background": "var(light_gray)"
     }
   ]
 }
