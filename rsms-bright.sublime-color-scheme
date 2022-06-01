@@ -269,7 +269,7 @@
     },
     {
       "scope": "markup.underline",
-      "foreground": "hsl(240, 100%, 53%)",
+      // "foreground": "hsl(240, 100%, 53%)",
     },
     {
       "scope": "markup.italic markup.bold | markup.bold markup.italic",
