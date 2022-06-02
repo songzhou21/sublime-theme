@@ -37,12 +37,14 @@
     "dark_brown": "hsla(30, 30%, 30%, 1)",
 
     "accent": "var(blue2)",
-    "attributes": "hsl(44, 96.1%, 26%)"
+    "attributes": "hsl(44, 96.1%, 26%)",
+    "stringColor": "hsl(1, 80.2%, 42.7%)",
+    "current_line": "hsl(214, 100%, 95.5%)",
   },
   "globals":
   {
     "foreground": "black",
-    "background": "hsl(60, 30%, 99%)",
+    "background": "hsl(213, 0%, 100%)",
 
     "accent": "var(accent)",
     "caret": "var(accent)",
@@ -58,7 +60,7 @@
 
     // gutter
     "gutter_foreground": "var(grey3)",
-    "line_highlight": "color(var(yellow) alpha(0.31))",
+    "line_highlight": ")",
 
     // diff
     "line_diff_width": "3",
@@ -90,11 +92,11 @@
     // =======
     {
       "scope": "string, string.unquoted",
-      "foreground": "var(cyan2)"
+      "foreground": "var(stringColor)"
     },
     {
       "scope": "string.regexp",
-      "foreground": "var(red4)"
+      "foreground": "var(stringColor)"
     },
     //==========
     // Constant
