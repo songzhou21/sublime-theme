@@ -60,7 +60,7 @@
 
     // gutter
     "gutter_foreground": "var(grey3)",
-    "line_highlight": ")",
+    "line_highlight": "var(current_line)",
 
     // diff
     "line_diff_width": "3",
