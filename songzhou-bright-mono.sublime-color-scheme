@@ -37,7 +37,7 @@
     "dark_brown": "hsla(30, 30%, 30%, 1)",
 
     "accent": "var(blue2)",
-    "attributes": "hsl(44, 96.1%, 26%)",
+    "attributes": "hsl(0, 0%, 40%)",
     "stringColor": "black",
     "keywordColor": "black",
     "current_line": "hsl(214, 100%, 95.5%)",
@@ -264,12 +264,12 @@
     // ========
     {
       "scope": "markup.heading.1 entity.name.section",
-      "foreground": "var(blue)",
+      "foreground": "var(keywordColor)",
       "font_style": "bold"
     },
     {
       "scope": "markup.heading.2 entity.name.section",
-      "foreground": "var(blue)"
+      "foreground": "var(keywordColor)"
     },
     {
       "scope": "markup.italic",
